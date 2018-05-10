@@ -1,0 +1,33 @@
+comment={
+	you are free to edit this file to set a initial value of system,
+	format is really clear.
+}
+
+ deltaTime = 0.002
+   damping = 0.001
+ softening = 1
+
+comment={
+	r=Rj-Ri, v=Vj-Vi,
+	d=sqrt(r^2+softening^2),
+	accel=r*(G*Mj+damping*(v dotproduct r)/d^2)/d^3.
+	d/dt (momentum)=0,
+	d/dt (angular momentum)=0,
+	d/dt (energy)<0, caused by damping
+}
+
+cluster={ n= 6000, position={ 30, 0, 0}, velocity={ 0, 2, 0}, size=3, spin=0.9, axis={ 1, 2, 3} }
+cluster={ n= 6000, position={-30, 0, 0}, velocity={ 0,-2, 0}, size=3, spin=0.9, axis={-1,-2, 3} }
+comment={ n=10000, size=3, spin=0.99}
+
+comment={
+	for a cluster,
+	n is number of stars in it(may be adjusted to fit GPU workgroup size),
+	position and velocity are of the barycenter of cluster,
+	spin = 0 for elliptical galaxy, and spin = 1 for spiral
+}
+comment={
+	if anything was wrong in this file(or at another place),
+	3DView will quit immediately.
+	you can run log.cmd and check log.txt to find what's wrong
+}
